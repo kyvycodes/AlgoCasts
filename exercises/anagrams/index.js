@@ -8,16 +8,43 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
-function anagrams(stringA, stringB) {
-  let obj = {};
+// function anagrams(stringA, stringB) {
+//   const aCharMap = buildMap(stringA);
+//   const bCharMap = buildMap(stringB);
 
-  for (let ch of stringA) {
-    if (!obj[ch]) {
-      obj[ch] = 1;
-    } else {
-      obj[ch]++;
-    }
-  }
+//   //returns object as an the array of all keys
+//   if (Object.keys(aCharMap).length !== Object.keys(bCharMap).length) {
+//     return false;
+//   }
+//   for (let char in aCharMap) {
+//     if (aCharMap[char] !== bCharMap[char]) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
+// function buildMap(str) {
+//   let charMap = {};
+
+//   // regex - used to manipulate strings
+//   for (let char of str.replace(/[^\w]/g, "").toLowerCase()) {
+//     if (!charMap[char]) {
+//       charMap[char] = charMap[char] + 1 || 1;
+//     }
+//   }
+//   return charMap;
+// }
+
+// 2nd solution - more straight forward
+function anagrams(stringA, stringB) {
+  if (cleanStr(stringA) === cleanStr(stringB)) return true;
+
+  return false;
+}
+
+function cleanStr(str) {
+  return str.replace(/[^\w]/g, "").toLowerCase().split("").sort().join("");
 }
 
 module.exports = anagrams;
