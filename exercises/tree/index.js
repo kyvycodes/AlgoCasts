@@ -33,6 +33,28 @@ class Tree {
   constructor(){
     this.root = null;
   }
+
+  traverseBF(fn){
+    //take empty array
+    //place root node
+    //while arr has elements
+    //remove first element - retrieve all of that nodes children and place them in the end of the array //repeat
+    let arr = [this.root] //gives us an element to iterate over
+
+    while(arr.length) {
+      const node = arr.shift();
+
+      arr.push(...node.children)
+      // or
+      // for (let child of node.children){
+      //  arr.push(child)
+      // }
+
+      fn(node)
+
+    }
+  }
+
 }
 
 module.exports = { Tree, Node };
