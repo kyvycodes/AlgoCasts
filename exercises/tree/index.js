@@ -60,7 +60,7 @@ class Tree {
     while(arr.length) {
       const node = arr.shift()
 
-      arr.unshift(...node.children); //moves element to the front
+      arr.unshift(...node.children); //moves element to the
 
       fn(node)
     }
