@@ -12,6 +12,29 @@
 //   l.insertLast('c')
 //   midpoint(l); // returns { data: 'b' }
 
-function midpoint(list) {}
+function midpoint(list) {
+  let slow = list.head
+  let fast = list.head
+
+  while(fast.next && fast.next.next){
+    slow = slow.next
+    fast = fast.next.next
+  }
+  return slow
+}
+
+// strategy:
+
+// use slow and fast
+// slow = first node
+// fast = first node
+// slow gets advanced by one node at a time
+// fast gets advanced by two nodes at a time
+
+// ask - are there two elements after fast defined?
+  // if yes continue
+  // if no we are at end of LL
+
+// slow moves HALF as fast
 
 module.exports = midpoint;
