@@ -7,16 +7,12 @@
 //   capitalize('a lazy fox') --> 'A Lazy Fox'
 //   capitalize('look, it is working!') --> 'Look, It Is Working!'
 
-// function capitalize(str) {
-//   let arr = str.split(" ");
-//   let upper = [];
 
-//   for (let word of arr) {
-//     upper.push(word[0].toUpperCase() + word.slice(1));
-//   }
-
-//   return upper.join(" ");
-// }
+// Steps
+// create a variable to update the first letter (at index 0) to upper case - this is assuming that every sentence will begin this way
+// loop through the remaining string starting at index 1, the following index
+// if the previous element is an empty space set the current element to uppercase
+// if not concat the element to the result string
 
 function capitalize(str) {
   let result = str[0].toUpperCase();
