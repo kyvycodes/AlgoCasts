@@ -8,6 +8,14 @@
 //   reverseInt(-15) === -51
 //   reverseInt(-90) === -9
 
+
+// To reverse an integer
+  // Turn it into a string, reserve the string
+  // if n is less than zero
+  // parse the integer and multiply it by -1
+
+  // else parse the integer
+
 function reverseInt(n) {
   let reversed = n.toString().split("").reverse().join("");
 
