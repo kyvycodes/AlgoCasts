@@ -6,21 +6,13 @@
 //   reverse('hello') === 'olleh'
 //   reverse('Greetings!') === '!sgniteerG'
 
-// function reverse(str) {
-//   return str.split("").reverse().join("");
-// }
 
-//second solution to manually
-// function reverse(str) {
-//   let reversed = "";
+// solution - reduce helper
 
-//   for (let char of str) {
-//     reversed = char + reversed;
-//   }
-//   return reversed;
-// }
+// Steps
+// split the string to call reduce on the new array
+// return the character concated to the reversed string
 
-// third solution helper
 function reverse(str) {
   return str.split("").reduce((reversed, char) => {
     return char + reversed;
