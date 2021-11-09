@@ -15,16 +15,40 @@
 //     [11, 16, 15, 6],
 //     [10,  9,  8, 7]]
 
+
+// Steps
+// the input is the number of inner arrays
+// loop through n, push an empty result into the results array to later fill with elements
+// our matrix begins with one so set the counter to increase with an initial value of one.
+// our starting row and starting column begin at 0;
+// to calculate our end column or end row it's n minus 1
+
+// create a while loop, as long as the starting column is less than or equal too the end column AND the starting row is less than or equal too the ending row
+// we assemble that row ex.
+    // assemble top row
+    // for (let i = startCol; i <= endCol; i++) {
+    //   results[startRow][i] = counter;
+    //   counter++;
+    // }
+// increment the counter
+// then outside of the for loop:
+  // increment the start's (if applicable) or decrement the end's
+// the first loop should initialize the top row -> then the right hand side -> bottom row -> left hand side
+// continue until the requirements for the while loop is met
+// return the result array.
+
+
+
 function matrix(n) {
   let results = [];
 
   for (let i = 0; i < n; i++) {
-    //n number of subarrays
     results.push([]);
   }
-  let counter = 1; //what num we want to put into our sub arr
 
-  //to cal end column or end row it is n minus 1
+  let counter = 1;
+
+
   let startCol = 0;
   let endCol = n - 1;
   let startRow = 0;

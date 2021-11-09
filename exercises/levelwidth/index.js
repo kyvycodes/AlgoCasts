@@ -11,6 +11,10 @@
 // 4       5
 // Answer: [1, 3, 2]
 
+
+//
+
+
 function levelWidth(root) {
   let widths = [0];
   let arr = [root, 's']; //queue //s represents a stopper value - 's' is a char not a node
