@@ -8,31 +8,22 @@
 // chunk([1, 2, 3, 4, 5], 4) --> [[ 1, 2, 3, 4], [5]]
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
-// function chunk(array, size) {
-//   let chunked = [];
 
-//   for (let element of array) {
-//     const last = chunked[chunked.length - 1]; //set the last el to the sub array
-//     console.log("last", last);
-//     if (!last || last.length === size) {
-//       chunked.push([element]);
-//       console.log("chunked", chunked);
-//     } else {
-//       last.push(element);
-//     }
-//   }
-//   return chunked;
-// }
+// Solution 1
 
-//slice approach - slice makes a copy, takes from the first index up to the second element
+// Steps
+// begin at index 0 loop through the array (using while)
+// slice every from index to the index plus the size
+// push it to the results array
+// more on to the next index, incrementing by size
 function chunk(array, size) {
   let index = 0;
-  let chunked = [];
+  let results = [];
   while (index < array.length) {
-    chunked.push(array.slice(index, index + size));
+    results.push(array.slice(index, index + size));
     index += size;
   }
-  return chunked;
+  return results;
 }
 
 module.exports = chunk;
