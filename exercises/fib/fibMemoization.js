@@ -7,8 +7,8 @@
 //...args allows us to take in multiple unknown amount of arguments
 
 function memoize(fn){
-  const cache = {...arg}
-  return function () {
+  const cache = {}
+  return function (...args) {
     if(cache[args]) { //have we seen these arg's before ?
       return cache[args] // if so return it
 
@@ -33,4 +33,6 @@ function slowFib(n) {
 }
 
 // take slow function -> pass to memoize -> returns new function
+// this call is referencing the recursive call of fib - the memoized version that we can, calling slowFib would defeat the purpose
+
 const fib = memoize(slowFib)

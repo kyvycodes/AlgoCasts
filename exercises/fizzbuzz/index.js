@@ -12,6 +12,8 @@
 //   4
 //   buzz
 
+// Steps
+// create a for loop
 function fizzBuzz(n) {
   // start at 1 we are not asked to print 0
   for (let i = 1; i <= n; i++) {
