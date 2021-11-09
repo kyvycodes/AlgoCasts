@@ -19,10 +19,11 @@
 
 
 // recursive solution
+// Steps
 // initialize default parameters one for the rows starting at zero (the top row) and one for the stairs ''
 // base case - if n is the size of the row return the problem
 // if n is the step length log the step and stop the current run
-//
+
 function steps(n, row = 0, step = "") {
 
   if (n === row) {
