@@ -14,12 +14,5 @@ function palindrome(str) {
   return reversed === str ? true : false;
 }
 
-// alternative solution
-// function palindrome(str) {
-//   //boolean check on every element in the array as soon as it is false the array returns false
-//   return str.split("").every((char, i) => {
-//     return char === str[str.length - i - 1]; //increments thru every step of the loop starting from the back
-//   });
-// }
 
 module.exports = palindrome;
