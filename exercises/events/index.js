@@ -11,9 +11,11 @@ class Events {
   on(eventName, callback) {
     // this.events[eventName]; //sets the eventName as a key
     if (this.events[eventName]) {
-      //if some value already exists
+
+      //if some value already exists push callback into the array
       this.events[eventName].push(callback);
     } else {
+
       // this event only includes the callback, create a new arr and add the cb to it
       this.events[eventName] = [callback];
     }
@@ -22,11 +24,14 @@ class Events {
   // Trigger all callbacks associated
   // with a given eventName
   trigger(eventName) {
+
     //look at the event key in our events object and if so trigger any callbacks
     if (this.events[eventName]) {
+
       for (let cb of this.events[eventName]) {
         cb(); //trigger the cb
       }
+
     }
   }
 

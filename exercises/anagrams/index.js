@@ -8,43 +8,26 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
+
+// regex (used to manipulate strings)
+// /[^\w]/g - anything that is not a number or a character
+
+// Solution 1 - more straight forward
+// call the helper function on both strings - if the results are equal return true
+// Goal - see if the string has the same quantity of each character
 function anagrams(stringA, stringB) {
-  const aCharMap = buildMap(stringA);
-  const bCharMap = buildMap(stringB);
-
-  //returns object as an the array of all keys
-  if (Object.keys(aCharMap).length !== Object.keys(bCharMap).length) {
-    return false;
-  }
-  for (let char in aCharMap) {
-    if (aCharMap[char] !== bCharMap[char]) {
-      return false;
-    }
-  }
-  return true;
+  if (cleanString(stringA) === cleanString(stringB)) return true;
+  return false;
 }
 
-function buildMap(str) {
-  let charMap = {};
-
-  // regex - used to manipulate strings
-  for (let char of str.replace(/[^\w]/g, "").toLowerCase()) {
-    if (!charMap[char]) {
-      charMap[char] = charMap[char] + 1 || 1;
-    }
-  }
-  return charMap;
+// Steps of helper
+// replaces any items that are not a # or character with an empty space
+// change all characters to lowercase
+// sort it
+// return it joined
+function cleanString(str) {
+  return str.replace(/[^\w]/g, "").toLowerCase().split("").sort().join("");
 }
-
-// // 2nd solution - more straight forward
-// function anagrams(stringA, stringB) {
-//   if (cleanStr(stringA) === cleanStr(stringB)) return true;
-
-//   return false;
-// }
-
-// function cleanStr(str) {
-//   return str.replace(/[^\w]/g, "").toLowerCase().split("").sort().join("");
-// }
 
 module.exports = anagrams;
+
